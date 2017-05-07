@@ -10,7 +10,7 @@
     <body background="123.jpg">
       <form method="post" action="login.jsp">
         <center>
-          <table border="1" width="14%" cellpadding="5" style="font-size:25px;font-family:Comic Sans;" bgcolor="white">
+          <table border="1" width="18%" cellpadding="5" style="font-size:25px;font-family:Comic Sans;" bgcolor="white">
           <thead>
             <tr>
               <th colspan="2">登入</th>
