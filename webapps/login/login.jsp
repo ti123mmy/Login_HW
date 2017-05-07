@@ -15,6 +15,6 @@
         //out.println("<a href='logout.jsp'>Log out</a>");
         response.sendRedirect("afterlogin.jsp");
     } else {
-        out.println("Invalid password <a href='index.jsp'>try again</a>");
+        out.println("帳號密碼輸入錯誤！ <a href='index.jsp'>點我重新登入</a>");
     }
 %>
