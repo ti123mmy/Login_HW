@@ -19,12 +19,12 @@
           <tbody>
             <tr>
               <td>帳號</td>
-              <td><input type="text" name="account" placeholder="請輸入帳號" value=""/></td>
+              <td><input type="text" name="account" placeholder="請輸入帳號" value="" required/></td>
             </tr>
 
             <tr>
               <td>密碼</td>
-              <td><input type="password" name="pass" placeholder="請輸入密碼" value=""/></td>
+              <td><input type="password" name="pass" placeholder="請輸入密碼" value="" required/></td>
             </tr>
             <tr>
               <td></td>
