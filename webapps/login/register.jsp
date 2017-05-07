@@ -4,12 +4,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registration</title>
+        <title>註冊頁面</title>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"> </script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/additional-methods.min.js"></script>
+        <script type="text/javascript" src="js/messages_zh_TW.min.js"></script>
+
+        <script>
+          $("form").submit(function () {
+            if ($("#reg").valid()) {
+              /*驗證成功，post the form data to server*/
+            } else return false;
+          });
+        </script>
     </head>
-    <body>
-        <form method="post" action="registration.jsp">
+    <body background="123.jpg">
+        <form id="reg" method="post" action="registration.jsp">
             <center>
-            <table border="1" width="30%" cellpadding="5">
+            <table border="1" width="30%" cellpadding="5" style="font-size:25px;" bgcolor="white">
                 <thead>
                     <tr>
                         <th colspan="2">請輸入基本資料</th>
@@ -18,22 +31,28 @@
                 <tbody>
                     <tr>
                         <td>姓名</td>
-                        <td><input type="text" name="name" value="" /></td>
+                        <td><input type="text" name="name" value="" placeholder="請輸入姓名" required/>
+                            <%-- <label for="name" class="error"></label> --%>
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Email</td>
-                        <td><input type="text" name="email" value="" /></td>
+                        <td><input type="text" name="email" value="" placeholder="請輸入電子信箱" required/>
+                            <%-- <label for="email" class="error"></label> --%>
+                        </td>
                     </tr>
 
                     <tr>
                         <td>帳號</td>
-                        <td><input type="text" name="account" value="" /></td>
+                        <td><input type="text" name="account" value="" placeholder="請輸入帳號" required/>
+                            <%-- <label for="account" class="error"></label> --%>
+                        </td>
                     </tr>
 
                     <tr>
                         <td>密碼</td>
-                        <td><input type="password" name="pass" value="" /></td>
+                        <td><input type="password" name="pass" value="" placeholder="請輸入密碼" required/></td>
                     </tr>
 
                     <tr>
@@ -42,8 +61,8 @@
                     </tr>
 
                     <tr>
-                        <td>備註欄</td>
-                        <td><input type="text" name="memo" value="" /></td>
+                        <td>備註欄(選填)</td>
+                        <td><input type="text" name="memo" value="" placeholder="有什麼話想說的嗎？"/></td>
                     </tr>
 
                     <tr>
@@ -55,7 +74,7 @@
                     </tr>
                 </tbody>
             </table>
-            </center>
-        </form>
+          </center>
+      </form>
     </body>
 </html>
