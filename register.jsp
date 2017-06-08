@@ -5,13 +5,39 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>註冊頁面</title>
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
         <script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"> </script>
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/additional-methods.min.js"></script>
         <script type="text/javascript" src="js/messages_zh_TW.min.js"></script>
-
+        <%-- <script src="js/jquery-3.2.1.min.js"></script> --%>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
+
+          $(document).ready(function() {
+
+          $('#act').blur(function() {
+          if($(this).val().length!=0){
+          $.post("check.jsp",
+          {name:$(this).val()},
+          function(response){
+            $('#act').addClass('error')
+            .after('<span class="error">'+response+'</span>');
+          } );
+        }
+        });
+        $('input').blur(function() {
+        if($(this).val().length==0) {
+        $(this).addClass('error')
+        .after('<br><span class="error">不可是空的!</span>');
+      }
+          });
+          $('input').focus(function() {
+          $(this).removeClass('error')
+          .next('span').remove();
+          });
+          });
+
           $("form").submit(function () {
             if ($("#reg").valid()) {
               /*驗證成功，post the form data to server*/
@@ -45,7 +71,7 @@
 
                     <tr>
                         <td>帳號</td>
-                        <td><input type="text" name="account" value="" placeholder="請輸入帳號" required/>
+                        <td><input id="act" type="text" name="account" value="" placeholder="請輸入帳號" required/>
                             <%-- <label for="account" class="error"></label> --%>
                         </td>
                     </tr>

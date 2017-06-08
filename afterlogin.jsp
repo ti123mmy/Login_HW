@@ -6,8 +6,8 @@
 <%
     if ((session.getAttribute("user") == null) || (session.getAttribute("user") == "" )){
 %>
-你沒有登入啦齁<br/>
-<a href="index.jsp">請登入</a>
+你沒有登入啦齁！一秒鐘跳回登入頁面！<br/>
+<%response.setHeader("Refresh", "1, URL=index.jsp");%>
 <%} else {
 %>
 歡迎回來！ <%=session.getAttribute("user")%>
@@ -60,7 +60,7 @@
   <body background="123.jpg">
     <center>
     <form action="search.jsp" method="post">
-          <br><br><br><br>使用帳號查詢 <br><br>  
+          <br><br><br><br>使用帳號查詢 <br><br>
           <input type='text' name="account" size="15" required/><br>
           <input type="hidden" name="sear" value="search"/>
           <br><br>
